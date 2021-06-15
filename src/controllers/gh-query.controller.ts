@@ -1,7 +1,8 @@
 // Uncomment these imports to begin using these cool features!
 
 import {inject} from '@loopback/context';
-import {get, param} from '@loopback/openapi-v3';
+import {get, getModelSchemaRef, param} from '@loopback/openapi-v3';
+import {QueryResult, ResultIssueInfo} from '../models';
 import {GhQueryService, IssueInfo, QueryResponse} from '../services';
 
 // import {inject} from '@loopback/core';
@@ -15,7 +16,18 @@ export class GhQueryController {
   // repo: <GitHub org>/<GitHub repo>. For example, `strongloop/loopback-next`
   // label: If it has special characters, you need to escape it.
   // For example, if the label is "help wanted", it will be "help+wanted".
-  @get('/issues/repo/{repo}/label/{label}')
+  @get('/issues/repo/{repo}/label/{label}', {
+    responses: {
+      '200': {
+        description: 'Array of GitHub issues info',
+        content: {
+          'application/json': {
+            schema: getModelSchemaRef(QueryResult)
+          }
+        }
+      }
+    }
+  })
   async getIssuesByLabel(
     @param.path.string('repo') repo: string,
     @param.path.string('label') label:string): Promise<QueryResult> {
@@ -85,7 +97,7 @@ getNextLink(link: string): string|null {
       issueInfo.title = issue.title;
       issueInfo.state = issue.state;
       issueInfo.age = this.getIssueAge(issue.created_at);
-      queryResult.items.push(issueInfo);
+      queryResult.items?.push(issueInfo);
   }
   /**
    * Calculate the age of the issue
@@ -106,17 +118,17 @@ getNextLink(link: string): string|null {
 
 
 
-/**
- * QueryResult
- */
-class QueryResult {
-  total_count: number;
-  items: ResultIssueInfo[];
-}
+// /**
+//  * QueryResult
+//  */
+// class QueryResult {
+//   total_count: number;
+//   items: ResultIssueInfo[];
+// }
 
-class ResultIssueInfo {
-  title: string;
-  html_url: string;
-  state: string;
-  age: number;
-}
+// class ResultIssueInfo {
+//   title: string;
+//   html_url: string;
+//   state: string;
+//   age: number;
+// }
