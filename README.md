@@ -1,5 +1,18 @@
 # loopback4-example-github
 
+This LoopBack application is an example to connect to third party REST APIs, GitHub API.
+
+It shows:
+
+- how to define template and options in [REST connector datasource](./src/datasources/githubds.datasource.ts).
+- how to traverse pages in the results in the [controller](./src/controllers/gh-query.controller.ts)
+
+## Blog posts
+
+I'll be creating a series of blog posts on how to create this end-to-end, i.e. from creating APIs in LoopBack application to frontend using React. Stay tuned!
+
+---
+
 This application is generated using [LoopBack 4 CLI](https://loopback.io/doc/en/lb4/Command-line-interface.html) with the
 [initial project layout](https://loopback.io/doc/en/lb4/Loopback-application-layout.html).
 
