@@ -11,6 +11,8 @@ It shows:
 
 I'll be creating a series of blog posts on how to create this end-to-end, i.e. from creating APIs in LoopBack application to frontend using React. Stay tuned!
 
+- Part 1: Creating Datasource to GitHub API: https://mobilediana.medium.com/building-an-end-to-end-application-with-loopback-react-js-7a22d726c35d
+
 ---
 
 This application is generated using [LoopBack 4 CLI](https://loopback.io/doc/en/lb4/Command-line-interface.html) with the
