@@ -11,7 +11,9 @@ It shows:
 
 I'll be creating a series of blog posts on how to create this end-to-end, i.e. from creating APIs in LoopBack application to frontend using React. Stay tuned!
 
-- Part 1: Creating Datasource to GitHub API: https://mobilediana.medium.com/building-an-end-to-end-application-with-loopback-react-js-7a22d726c35d
+- [Part 1: Creating Datasource to GitHub API](https://mobilediana.medium.com/building-an-end-to-end-application-with-loopback-react-js-7a22d726c35d)
+- [Part 2 — Creating Service Proxy](https://mobilediana.medium.com/building-an-end-to-end-application-with-loopback-react-js-part-2-creating-service-proxy-7ffac2bd7980)
+- [Part 3: Pagination in GitHub API Results](https://mobilediana.medium.com/building-an-end-to-end-application-with-loopback-react-js-90cfd7a4813c#a270-8107da706e6f)
 
 ---
 
